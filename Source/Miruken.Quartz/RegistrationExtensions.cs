@@ -5,7 +5,7 @@
 
     public static class RegistrationExtensions
     {
-        public static Registration WithJobs(this Registration registration)
+        public static Registration WithQuartz(this Registration registration)
         {
             if (!registration.CanRegister(typeof(RegistrationExtensions)))
                 return registration;
@@ -17,4 +17,3 @@
         }
     }
 }
-
