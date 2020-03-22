@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29609.76
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Miruken.Quartz", "Source\Miruken.Quartz\Miruken.Quartz.csproj", "{3164AC64-CA22-44FC-B6A7-1E3EEFA8DDD3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F7110FFC-27E1-4C01-974B-0E89780FB93B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3164AC64-CA22-44FC-B6A7-1E3EEFA8DDD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3164AC64-CA22-44FC-B6A7-1E3EEFA8DDD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3164AC64-CA22-44FC-B6A7-1E3EEFA8DDD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3164AC64-CA22-44FC-B6A7-1E3EEFA8DDD3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B0F7ACAA-E812-46EC-B8D3-E6EE9E3526A1}
+	EndGlobalSection
+EndGlobal
