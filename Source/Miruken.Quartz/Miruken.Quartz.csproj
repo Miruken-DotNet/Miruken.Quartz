@@ -13,7 +13,7 @@
     <Description>Miruken integration with Quartz Scheduler</Description>
     <Copyright>Copyright 2020</Copyright>
     <PackageLicenseUrl>https://github.com/Miruken-DotNet/Miruken.Quartz/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/Miruken-DotNet/MirukenQuartz</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/Miruken-DotNet/Miruken.Quartz</PackageProjectUrl>
     <PackageIconUrl>https://avatars0.githubusercontent.com/u/20844317</PackageIconUrl>
     <PackageReleaseNotes>Summary of changes made in this release of the package.</PackageReleaseNotes>
     <Company>Miruken</Company>
