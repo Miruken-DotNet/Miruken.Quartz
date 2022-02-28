@@ -1,19 +1,18 @@
-﻿namespace Miruken.Quartz
+﻿namespace Miruken.Quartz;
+
+using Microsoft.Extensions.DependencyInjection;
+using Register;
+
+public static class RegistrationExtensions
 {
-    using Microsoft.Extensions.DependencyInjection;
-    using Register;
-
-    public static class RegistrationExtensions
+    public static Registration WithQuartz(this Registration registration)
     {
-        public static Registration WithQuartz(this Registration registration)
-        {
-            if (!registration.CanRegister(typeof(RegistrationExtensions)))
-                return registration;
+        if (!registration.CanRegister(typeof(RegistrationExtensions)))
+            return registration;
 
-            return registration.Services(services =>
-            {
-                services.AddHostedService<JobRunnerHostedService>();
-            });
-        }
+        return registration.Services(services =>
+        {
+            services.AddHostedService<JobRunnerHostedService>();
+        });
     }
 }

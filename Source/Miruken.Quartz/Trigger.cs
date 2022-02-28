@@ -1,4 +1,3 @@
-﻿namespace Miruken.Quartz
-{
-    public class Trigger<TJob> { }
-}
+﻿namespace Miruken.Quartz;
+
+public class Trigger<TJob> { }
