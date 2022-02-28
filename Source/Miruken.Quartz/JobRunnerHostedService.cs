@@ -64,25 +64,22 @@
                         .Attributes.OfType<ScheduleAttribute>()
                         .FirstOrDefault();
 
-                if (schedule != null)
+                if (schedule == null) continue;
+                if (methodBinding.Key is Type jobType)
                 {
-                    var jobType = methodBinding.Key as Type;
-                    if (jobType != null)
+                    if (jobType.GetConstructor(Type.EmptyTypes) == null)
                     {
-                        if (jobType.GetConstructor(Type.EmptyTypes) == null)
-                        {
-                            throw new InvalidOperationException(
-                                $"Job '{jobType}' requires a default constructor to run");
-                        }
-
-                        ScheduleJob(jobType, schedule, scheduler);
-                        continue;
+                        throw new InvalidOperationException(
+                            $"Job '{jobType}' requires a default constructor to run");
                     }
 
-                    var member = methodBinding.Dispatcher.Member;
-                    throw new InvalidOperationException(
-                        $"Unrecognized scheduled job '{methodBinding.Key}' for {member}");
+                    ScheduleJob(jobType, schedule, scheduler);
+                    continue;
                 }
+
+                var member = methodBinding.Dispatcher.Member;
+                throw new InvalidOperationException(
+                    $"Unrecognized scheduled job '{methodBinding.Key}' for {member}");
             }
 
             return scheduler;
@@ -127,8 +124,8 @@
             var jobGroup   = schedule.Group ?? _defaultGroup;
 
             var job = (string.IsNullOrEmpty(jobGroup)
-                    ? jobBuilder.WithIdentity(logicalJobType.FullName)
-                    : jobBuilder.WithIdentity(logicalJobType.FullName, jobGroup))
+                    ? jobBuilder.WithIdentity(logicalJobType.FullName!)
+                    : jobBuilder.WithIdentity(logicalJobType.FullName!, jobGroup))
                 .Build();
 
             job.JobDataMap.Put("Request", jobType);
